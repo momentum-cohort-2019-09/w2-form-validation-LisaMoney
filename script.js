@@ -1,15 +1,21 @@
-function query (selector) {
-    return document.querySelector(selector)
-}
+let name = document.querySelector("#name");
+let nameText = name.value.trim()
 
-function queryAll (selector) {
-    return document.querySelectorAll(selector)
-}
+function markValid (field) {
+    clearErrorMsgs(field)
+    field.parentNode.classList.remove('input-invalid')
+    field.parentNode.classList.add('input-valid')
+  }
+  
+  function markInvalid (field, errorMsg) {
+    field.parentNode.classList.remove('input-valid')
+    field.parentNode.classList.add('input-invalid')
+  }
 
-<script src="script.js"></script>
+  if (nameText === "") {
+      markInvalid (nameText)
+  }
 
-function markValid(field) {
-    clearErrorMsgs(field);
-    field.parentNode.classList.remove("input-invalid");
-    field.parentNode.classList.add("input-valid");
-}
+  query("#parking-form").addEventListener("submit", function(event)) {
+      document.querySelector("#parking-form")
+  }
